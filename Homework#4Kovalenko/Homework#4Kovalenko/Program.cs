@@ -7,25 +7,51 @@ string inOperandFirst;
 string inOperandSecond;
 int isNumber1;
 int isNumber2;
-Found:
-Console.WriteLine("Enter number#1");
 
-inOperandFirst =Console.ReadLine();
+Console.WriteLine("Введите выражение !\n\n Пожайста после каждого ввода нажимайте ENTER");
+Found:
+
+inOperandFirst = Console.ReadLine();
 bool success1 = int.TryParse(inOperandFirst, out isNumber1);
 
-Console.WriteLine("Enter number#2");
+string inOperator = Console.ReadLine();
+Console.Clear();
+Console.WriteLine("{0} {1}", inOperandFirst, inOperator);
 
 inOperandSecond = Console.ReadLine();
+Console.Clear();
+Console.WriteLine("{0} {1} {2}", inOperandFirst, inOperator, inOperandSecond);
+
 bool success2 = int.TryParse(inOperandSecond, out isNumber2);
 
+Console.ReadLine();
 
-if (success1 && success2) 
+
+switch (success1 && success2)
 {
-    Console.WriteLine("Числа {0}, {1}" ,isNumber1 , isNumber2);
-}
-else
-{
-    Console.Clear();
-    Console.WriteLine("Это символы введите цифры\nПопробуйте еще раз");
-    goto Found;
+    case true:
+        switch (inOperator)
+        {
+            case "+":
+                Console.WriteLine("Равно  {0}", isNumber1 + isNumber2);
+                break;
+            case "-":
+                Console.WriteLine("Равно  {0}", isNumber1 - isNumber2);
+                break;
+            case "*":
+                Console.WriteLine("Равно  {0}", isNumber1 * isNumber2);
+                break;
+            case "/":
+                Console.WriteLine("Равно  {0}", Convert.ToDecimal(isNumber1 / isNumber2));
+                break;
+            
+        }
+        break;
+ 
+
+    case false:
+
+        Console.Clear();
+        Console.WriteLine("Это символы введите цифры или недопустимый набор знаков!\n\nПопробуйте еще раз\n");
+        goto Found;
 }
