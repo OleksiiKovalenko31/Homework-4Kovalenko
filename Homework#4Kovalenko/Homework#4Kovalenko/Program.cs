@@ -8,7 +8,7 @@ string inOperandSecond;
 int isNumber1;
 int isNumber2;
 
-Console.WriteLine("Введите выражение !\n\n Пожайста после каждого ввода нажимайте ENTER");
+Console.WriteLine("Введите выражение !\n\nПожайста для каждого ввода нажимайте ENTER!");
 Found:
 
 inOperandFirst = Console.ReadLine();
@@ -24,7 +24,6 @@ Console.WriteLine("{0} {1} {2}", inOperandFirst, inOperator, inOperandSecond);
 
 bool success2 = int.TryParse(inOperandSecond, out isNumber2);
 
-Console.ReadLine();
 
 
 switch (success1 && success2)
@@ -42,7 +41,7 @@ switch (success1 && success2)
                 Console.WriteLine("Равно  {0}", isNumber1 * isNumber2);
                 break;
             case "/":
-                Console.WriteLine("Равно  {0}", Convert.ToDecimal(isNumber1 / isNumber2));
+                Console.WriteLine("Равно  {0}", Convert.ToDecimal(isNumber1) / Convert.ToDecimal(isNumber2));
                 break;
             
         }
@@ -52,6 +51,6 @@ switch (success1 && success2)
     case false:
 
         Console.Clear();
-        Console.WriteLine("Это символы введите цифры или недопустимый набор знаков!\n\nПопробуйте еще раз\n");
+        Console.WriteLine("Это символы или недопустимый набор знаков введите цифры и оператор!\n\nПопробуйте еще раз . . .\n");
         goto Found;
 }
