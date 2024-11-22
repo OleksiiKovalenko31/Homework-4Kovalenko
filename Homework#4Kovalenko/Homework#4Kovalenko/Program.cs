@@ -11,7 +11,7 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 //string inOperandSecond;
 //int isNumber1;
 //int isNumber2;
-//Console.WriteLine("Здраствуйте это примитивный калькулятор.\n\nВведите выражение !\n\nПожайста для каждого ввода нажимайте ENTER!");
+Console.WriteLine("Доброго дня це примітивний калькулятор.\nБудь ласка для кожного вводу натискайте ENTER!");
 
 
 
@@ -39,28 +39,32 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 
 try
 {
-    int isNumber1;
-    int isNumber2;
+    decimal isNumber1;
+    decimal isNumber2;
     string inOperator;
 
-    Console.WriteLine("Введіть перше число: "); isNumber1 = int.Parse(Console.ReadLine());
-    Console.WriteLine("Введіть оператор: "); inOperator = Console.ReadLine();
-    Console.WriteLine("Введіть друге число: ");  isNumber2 = int.Parse(Console.ReadLine());
-    
+    Console.Write("Введіть перше число: "); isNumber1 = decimal.Parse(Console.ReadLine());
+    Console.Write("Введіть оператор: "); inOperator = Console.ReadLine();
+    Console.Write("Введіть друге число: "); isNumber2 = decimal.Parse(Console.ReadLine());
+
+    //Console.Write("Введіть перше число: "); isNumber1 = char.Parse(Console.ReadLine());
+    //Console.Write("Введіть оператор: "); inOperator = Console.ReadLine();
+    //Console.Write("Введіть друге число: "); isNumber2 = char.Parse(Console.ReadLine());
+
 
     switch (inOperator)
     {
         case "+":
-            Console.WriteLine("Дорівнює  {0}", isNumber1 + isNumber2);
+            Console.WriteLine("\n{0} + {1} = {2}",isNumber1, isNumber2, isNumber1 + isNumber2);
             break;
         case "-":
-            Console.WriteLine("Дорівнює  {0}", isNumber1 - isNumber2);
+            Console.WriteLine("\n{0} - {1} = {2}", isNumber1, isNumber2, isNumber1 - isNumber2);
             break;
         case "*":
-            Console.WriteLine("Дорівнює  {0}", isNumber1 * isNumber2);
+            Console.WriteLine("\n{0} * {1} = {2}", isNumber1, isNumber2, isNumber1 * isNumber2);
             break;
         case "/":
-            Console.WriteLine("Дорівнює  {0}", Convert.ToDecimal(isNumber1) / Convert.ToDecimal(isNumber2));
+            Console.WriteLine("\n{0} / {1) = {2}" , isNumber1, isNumber2, isNumber1 / isNumber2);
             break;
 
     }
@@ -74,13 +78,13 @@ catch (OverflowException)
 {
     Console.WriteLine("Задовге чи закоротке число !");
 }
-catch (FormatException)
+catch (FormatException ms)
 {
-    Console.WriteLine("Введеі дані не є вірними! ");
+    Console.WriteLine("Введеі дані не є вірними! {0} ", ms);
 }
 catch (Exception ms) 
 {   
-    Console.WriteLine("Непердбачувана помилка! " );
+    Console.WriteLine("Непердбачувана помилка! {0}" ,ms );
 }
 
 //finally
