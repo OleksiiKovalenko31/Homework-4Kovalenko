@@ -64,7 +64,7 @@ try
             Console.WriteLine("\n{0} * {1} = {2}", isNumber1, isNumber2, isNumber1 * isNumber2);
             break;
         case "/":
-            Console.WriteLine("\n{0} / {1) = {2}" , isNumber1, isNumber2, isNumber1 / isNumber2);
+            Console.WriteLine("\n{0} / {1} = {2}" , isNumber1, isNumber2, isNumber1 / isNumber2);
             break;
 
     }
